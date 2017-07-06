@@ -1,0 +1,20 @@
+include "global.tbh"
+dim channel as tbt52_nums
+'====================================================================
+sub on_sys_init()
+	dim num as tbt52_nums
+	dim adc as real
+	if tbt52_init(YES)=NG then
+		sys.debugprint("SSI channel could not be allocated for the ADC module (#52),  using bit banging instead."+CR_LF)
+	end if
+
+	channel=ADC_4'<<====================================== SELECT DESIRED ADC CHANNEL HERE
+	tbt52_channel_select(channel)
+end sub
+
+sub on_sys_timer()
+	dim adc as real
+
+	adc=tbt52_get_volts()
+	sys.debugprint("Voltage : " +ftostr(adc,FTOSTR_MODE_AUTO,4)+CR_LF)
+end sub

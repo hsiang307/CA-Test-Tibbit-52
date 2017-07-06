@@ -1,0 +1,14 @@
+'DEFINES-------------------------------------------------------------
+const CR_LF=chr(10)+chr(13)
+
+#define TBT52_DEBUG_PRINT 1
+#define TBT52_CLK_PIN PL_IO_NUM_9_TX0
+#define TBT52_DATA_PIN PL_IO_NUM_8_RX0
+#define TBT52_MCLR_PIN PL_IO_NUM_0
+#define TBT52_INT_PIN PL_IO_NUM_16_INT0
+
+'INCLUDES------------------------------------------------------------
+include "ssi\trunk\ssi.tbh"
+include "super_i2c.tbh"
+include "tbt52.tbh"
+'DECLARATIONS--------------------------------------------------------
