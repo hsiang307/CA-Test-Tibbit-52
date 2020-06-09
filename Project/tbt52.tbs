@@ -43,11 +43,7 @@ function tbt52_init(use_ssi as no_yes) as ok_ng
 	if i2c_num_tbt52<4 then
 		ssi.channel=i2c_num_tbt52
 		ssi.enabled=NO
-		#IF PLATFORM_ID=TPP2WG2 or PLATFORM_ID=TPP3WG2 or PLATFORM_ID=TPP2G2 or PLATFORM_ID=TPP3G2
-			ssi.baudrate=150
-		#ELIF PLATFORM_ID=TPP2W or PLATFORM_ID=TPP3W
-			ssi.baudrate=110
-		#ENDIF
+		ssi.baudrate=PL_SSI_BAUDRATES_100kHz
 		ssi.clkmap=TBT52_CLK_PIN
 		ssi.dimap=TBT52_DATA_PIN
 		ssi.domap=TBT52_DATA_PIN
